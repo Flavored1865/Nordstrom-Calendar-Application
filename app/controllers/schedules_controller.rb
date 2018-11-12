@@ -1,4 +1,5 @@
 class SchedulesController < ApplicationController
+  before_action :require_login, only: [:show, :edit, :update, :destroy, :new, :index]
   before_action :set_schedule, only: [:show, :edit, :update, :destroy]
 
   # GET /schedules

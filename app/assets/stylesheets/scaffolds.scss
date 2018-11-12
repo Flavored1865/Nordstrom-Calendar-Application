@@ -1,5 +1,5 @@
 body {
-  background-color: #fff;
+  background-color: #3baeff;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -15,21 +15,21 @@ p, ol, ul, td {
 }
 
 pre {
-  background-color: #eee;
+  background-color: #7e8183;
   padding: 10px;
   font-size: 11px;
 }
 
 a {
-  color: #000;
+  color: #272727;
 
   &:visited {
     color: #666;
   }
 
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: #c1c1c1;
+    background-color: #262626;
   }
 }
 
@@ -65,7 +65,7 @@ div {
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
-  background-color: #f0f0f0;
+  background-color: #a7a7a7;
 
   h2 {
     text-align: left;
@@ -74,7 +74,7 @@ div {
     font-size: 12px;
     margin: -7px;
     margin-bottom: 0;
-    background-color: #c00;
+    background-color: #fbf7f3;
     color: #fff;
   }
 

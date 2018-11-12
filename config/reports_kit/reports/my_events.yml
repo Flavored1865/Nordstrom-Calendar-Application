@@ -1,0 +1,3 @@
+measure: event
+dimensions:
+  - created_at

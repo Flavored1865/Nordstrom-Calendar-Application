@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :schedules
   resources :employees
   resources :events
-  root 'visitors#index'
+  resources :visitors
+  root to: 'welcome#show'
+  mount ReportsKit::Engine, at: '/'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

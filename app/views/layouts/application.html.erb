@@ -1,23 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Nordstrom Scheduler" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Nordstrom Scheduler" %>">
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-  <body>
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
-    <main role="main">
-      <div class='container'>
-        <%= render 'layouts/messages' %>
-        <%= yield %>
-        <div id='remote_container'></div>
-      </div>
-    </main>
-  </body>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= content_for?(:title) ? yield(:title) : "Nordstrom Scheduler" %></title>
+  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Nordstrom Scheduler" %>">
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+
+<header>
+
+  <%= render 'layouts/navigation' %>
+
+  <% if signed_in? %>
+    Signed in as: <%= current_user.email %>
+    <%= button_to 'Sign out', sign_out_path, method: :delete %>
+  <% else %>
+    <%= link_to 'Sign in', sign_in_path %>
+  <% end %>
+</header>
+
+
+<section>
+
+  <div id="flash">
+    <% flash.each do |key, value| %>
+      <div class="flash <%= key %>"><%= value %></div>
+    <% end %>
+  </div>
+
+
+  <main role="main">
+    <div class='container'>
+      <%= render 'layouts/messages' %>
+      <%= yield %>
+      <div id='remote_container'></div>
+    </div>
+  </main>
+</section>
+</body>
 </html>

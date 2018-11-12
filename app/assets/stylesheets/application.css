@@ -14,5 +14,6 @@
  *= require daterangepicker
  *= require_tree .
  *= require_self
+ *= require reports_kit/application
  */
 

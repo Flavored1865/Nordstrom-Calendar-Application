@@ -17,6 +17,7 @@
 //= require moment
 //= require fullcalendar
 //= require daterangepicker
+//= require reports_kit/application
 //= require_tree .
 
 
